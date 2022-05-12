@@ -9,28 +9,95 @@ from werkzeug.urls import url_parse
 from werkzeug.utils import secure_filename
 from shutil import copyfile
 from app.forms import LoginForm
+from app.models import users_tbl, DbUser
 
 @login.user_loader
 def load_user(user_id):
     """
     adds wrapper to user in oder for it to interact properly with flask extensions
     """
-    # user = user_details.query.get(user_id)
-    user = None
+    user = users_tbl.query.get(user_id)
     if user:
-        # return DbUser(user)
+        return DbUser(user)
         pass
     else:
         return None
 
 @app.route('/')
 @app.route('/home')
+@login_required
 def home():
     """
     Home page, content can be added currently just a template for navigation bar at the top of the screen and footer
     """
 
-    return render_template('home.html', page='home')
+    return render_template('system_overview.html', page='home')
+
+@app.route('/brief')
+@login_required
+def brief():
+    """
+    Home page, content can be added currently just a template for navigation bar at the top of the screen and footer
+    """
+
+    return render_template('Admin - BreifPage.html', page='asset_management')
+
+
+@app.route('/permissions')
+@login_required
+def permissions():
+    """
+    Home page, content can be added currently just a template for navigation bar at the top of the screen and footer
+    """
+
+    return render_template('Admin - Permission Management.html', page='asset_management')
+
+@app.route('/SystemOverview')
+@login_required
+def SystemOverview():
+    """
+    Home page, content can be added currently just a template for navigation bar at the top of the screen and footer
+    """
+
+    return render_template('Admin - SystemOverview.html', page='asset_management')
+
+@app.route('/admin_report')
+@login_required
+def admin_report():
+    """
+    Home page, content can be added currently just a template for navigation bar at the top of the screen and footer
+    """
+
+    return render_template('Admin report page.html', page='asset_management')
+
+
+@app.route('/reports')
+@login_required
+def reports():
+    """
+    Home page, content can be added currently just a template for navigation bar at the top of the screen and footer
+    """
+
+    return render_template('Service Desk - Reports page.html', page='asset_management')
+
+
+@app.route('/task_management')
+@login_required
+def task_management():
+    """
+    Home page, content can be added currently just a template for navigation bar at the top of the screen and footer
+    """
+
+    return render_template('Service Desk - Task management page', page='asset_management')
+
+@app.route('/asset_management')
+@login_required
+def asset_management():
+    """
+    Home page, content can be added currently just a template for navigation bar at the top of the screen and footer
+    """
+
+    return render_template('Admin - Asset Management Page.html', page='asset_management')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -53,24 +120,34 @@ def login():
         flask function
         """
 
-        # um = UserAccessManager(connect_yaml=connect_yaml)
-        # pw = um.get_user_password(user_email=form.user_email.data)
-        # user = DbUser(user_details.query.filter_by(
-        #     email=form.user_email.data).first())
+        user = DbUser(users_tbl.query.filter_by(users_username=form.username.data).first())
+        pw = user.get_password()
 
-        # if user and form.password.data == pw:
-        #     if form.remember_me.data:
-        #         login_user(user, remember=True)
-        #     else:
-        #         login_user(user, remember=False)
-        # else:
-        #     flash('Invalid username or password')
-        #     return redirect(url_for('login'))
-        # next_page = request.args.get('next')
-        #
-        # if not next_page or url_parse(next_page).netloc != '':
-        #     next_page = url_for('home')
-        # return redirect(next_page)
+        if form.validate_on_submit():
+            if user and form.password.data == pw:
+                if form.remember_me.data:
+                    login_user(user, remember=True)
+                else:
+                    login_user(user, remember=False)
+            else:
+                flash('Invalid username or password')
+                return redirect(url_for('login'))
+            next_page = request.args.get('next')
+
+            if not next_page or url_parse(next_page).netloc != '':
+                next_page = url_for('home')
+            return redirect(next_page)
 
     return render_template('login.html', title='Sign In',
                            form=form, page='login')
+
+
+@app.route('/logout')
+def logout():
+    """
+        Logs user out
+    """
+    logout_user()
+    flash('You have logged out')
+
+    return redirect(url_for('login'))

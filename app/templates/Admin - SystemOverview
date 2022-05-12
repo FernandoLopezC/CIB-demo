@@ -1,0 +1,54 @@
+    {% extends "home.html" %}
+
+    {% block content %}
+
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <a>DWG</a>
+            </div>
+
+            <div class="center">
+                <div class="nav-link-wrapper">
+                    <a href="#">Application breifing</a>
+                    <a href="#">System overview</a>
+                    <a href="#">Permission management</a>
+                    <a href="#">Asset management</a>
+                    <a href="#">Reports </a>
+                </div>
+            </div>
+            
+            <div class="right-side">
+                <a>User-icon</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <form action="#" method="GET">
+            <div>
+                <label for="Reports-Generated">Reports ge erated</label>
+                <input type="text" id="Report-gen" style="width: 300px; height: 250px">
+              
+                <label for="Future-Directions">Future directions</label>
+                <input type="text" id="Future-direct" style="width: 300px; height: 250px">
+              
+                <label for="Placement-Overview">Placement Overview</label>
+                <input type="text" id="App-func-breif" style="width: 300px; height: 250px">
+              
+                <label for="Asset-Overview">Asset Overview</label>
+                <input type="text" id="App-func-breif" style="width: 300px; height: 250px">
+              
+                <label for="Task-Overview">Task Overview</label>
+                <input type="text" id="App-func-breif" style="width: 300px; height: 250px">
+              
+                <label for="Permission-Overview">Permission overview</label>
+                <input type="text" id="App-func-breif" style="width: 300px; height: 250px">
+            </div>
+        </form>
+    </div>
+
+
+
+    {% endblock %}
+

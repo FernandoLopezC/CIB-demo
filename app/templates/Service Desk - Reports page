@@ -1,0 +1,53 @@
+{% extends "home.html" %}
+
+    {% block content %}
+
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <a>DWG</a>
+            </div>
+
+            <div class="center">
+                <div class="nav-link-wrapper">
+                    <a href="#">Application breifing</a>
+                    <a href="#">Task management</a>
+                    <a href="#">Assets</a>
+                    <a href="#">New assets</a>
+                    <a href="#">Reports </a>
+                </div>
+            </div>
+            
+            <div class="right-side">
+                <a>User-icon</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <form action="#" method="GET">
+            <div>
+                <label for="user">Type of report</label>
+                <input type="text" id="Type-of-report" style="width: 100px; height: 100px">
+
+                <label for="user">Date from</label>
+                <input type="text" id="Date-from" style="width: 100px; height: 100px">
+
+                <label for="user">Date to</label>
+                <input type="text" id="Date-to" style="width: 100px; height: 100px">
+
+                <button type="submit" id="Form-generate">Generate</button>
+
+                <label for="user">Reports Generated</label>
+                <input type="text" id="Reports-generated" style="width: 250px; height: 400px">
+
+              
+                
+            </div>
+        </form>
+    </div>
+
+
+
+    {% endblock %}
+

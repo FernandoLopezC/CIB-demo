@@ -1,0 +1,60 @@
+{% extends "home.html" %}
+
+    {% block content %}
+
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <a>DWG</a>
+            </div>
+
+            <div class="center">
+                <div class="nav-link-wrapper">
+                    <a href="#">Application breifing</a>
+                    <a href="#">Task management</a>
+                    <a href="#">Assets</a>
+                    <a href="#">New assets</a>
+                    <a href="#">Reports </a>
+                </div>
+            </div>
+            
+            <div class="right-side">
+                <a>User-icon</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <form action="#" method="GET">
+            <div>
+                <a> Task Assignment </a>
+                <label for="user">Select User</label>
+                <input type="text" id="Task-assignment" style="width: 50px; height: 50px">
+
+                <label for="user">Select User task or Ceate new task</label>
+                <input type="text" id="Select-create-user-task" style="width: 50px; height: 50px">
+              
+                <button type="Add-task">Add Task</button>
+                <button type="Remove-task">Remove task</button>
+
+                <label for="user">Task Title</label>
+                <input type="text" id="Task-title" style="width: 50px; height: 50px">
+
+                <label for="user">Task description</label>
+                <input type="text" id="Task-description" style="width: 300px; height: 200px">
+                
+                <label for="user">Task assigned with status</label>
+                <input type="text" id="Task-assigned-with-status" style="width: 300px; height: 200px">
+
+              
+                
+            </div>
+        </form>
+    </div>
+
+
+
+    {% endblock %}
+</body>
+</html>
+

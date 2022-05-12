@@ -1,0 +1,38 @@
+{% extends "home.html" %}
+
+    {% block content %}
+
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <a>DWG</a>
+            </div>
+
+            <div class="center">
+                <div class="nav-link-wrapper">
+                    <a href="#">Application breifing</a>
+                    <a href="#">Task management</a>
+                    <a href="#">Assets</a>
+                    <a href="#">New assets</a>
+                    <a href="#">Reports </a>
+                </div>
+            </div>
+            
+            <div class="right-side">
+                <a>User-icon</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <form action="#" method="GET">
+            <div>
+                <label for="Application-function-breif">Application function breif</label>
+                <input type="text" type="function-breif" id="App-func-breif" style="width: 500px; height: 500px">
+            </div>
+        </form>
+    </div>
+
+
+
+    {% endblock %}

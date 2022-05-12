@@ -1,0 +1,53 @@
+{% extends "home.html" %}
+
+    {% block content %}
+
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <a>DWG</a>
+            </div>
+
+            <div class="center">
+                <div class="nav-link-wrapper">
+                    <a href="#">Application breifing</a>
+                    <a href="#">System overview</a>
+                    <a href="#">Permission management</a>
+                    <a href="#">Asset management</a>
+                    <a href="#">Reports </a>
+                </div>
+            </div>
+            
+            <div class="right-side">
+                <a>User-icon</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <form action="#" method="GET">
+            <div>
+                <label for="user">Users</label>
+                <input type="text" id="User-list" style="width: 300px; height: 500px">
+              
+                <a href="">↣↣</a>
+                <a href="">↣↣</a>
+
+                <label for="user">Permission overview</label>
+                <input type="text" id="Permission-overview" style="width: 300px; height: 500px">
+              
+                <button type="Add-permission">Add</button>
+                <button type="Remove-permission">Remove</button>
+
+                <label for="user">Permission flags</label>
+                <input type="text" id="Permission-flags" style="width: 150px; height: 150px">
+              
+                
+            </div>
+        </form>
+    </div>
+
+
+
+    {% endblock %}
+
