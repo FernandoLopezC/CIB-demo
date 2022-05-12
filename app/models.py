@@ -39,22 +39,22 @@ class asset_count(db.Model):
 
     __tablename__ = "asset_count"
 
-    location_code = sqa.Column(sqa.String, primary_key=True)
+    loc_code = sqa.Column(sqa.String, primary_key=True)
     asset_count = sqa.Column(sqa.Integer)
 
 
-class asset_loc_status(db.Model):
+class asset_user_loc(db.Model):
 
-    __tablename__ = "asset_loc_status"
+    __tablename__ = "asset_user_loc"
 
     loc_code = sqa.Column(sqa.String, primary_key=True)
     status_status = sqa.Column(sqa.String)
     count = sqa.Column(sqa.Integer)
 
 
-class asset_user_loc(db.Model):
+class asset_loc_status(db.Model):
 
-    __tablename__ = "asset_user_loc"
+    __tablename__ = "asset_loc_status"
 
     asset_id = sqa.Column(sqa.String, primary_key=True)
     loc_code = sqa.Column(sqa.String)
@@ -81,6 +81,7 @@ class DbUser(object):
     def get_password(self):
 
         return self._user.users_password
+
     def get_role(self):
 
         return self._user.users_role
@@ -93,6 +94,7 @@ class MyModelView(ModelView):
     column_display_pk = True
     column_hide_backrefs = False
     can_search = True
+    can_export = True
 
     def inaccessible_callback(self, name, **kwargs):
         # redirect to login page if user doesn't have access
@@ -100,11 +102,10 @@ class MyModelView(ModelView):
 
     def is_accessible(self):
         try:
-            # if current_user.has_subproduct_permission('GET_META'):
-            #     return current_user.is_authenticated
-            # else:
-            #     return False
-            return True
+            if current_user.get_role() == "Manager" or current_user.get_role() == "Technician":
+                return current_user.is_authenticated
+            else:
+                return False
         except AttributeError:
             return self.inaccessible_callback(name='')
 

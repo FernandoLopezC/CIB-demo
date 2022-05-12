@@ -16,3 +16,9 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Sign In')
 
 
+class PermissionsForm(FlaskForm):
+
+    users = SelectField("User", choices=[o[0] for o in users_tbl.query.with_entities(users_tbl.users_username).all()])
+    permissions = SelectField("Permissions", choices=["Service Desk", "Management", "Technician"])
+
+

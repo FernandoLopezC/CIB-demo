@@ -8,7 +8,7 @@ import os
 from werkzeug.urls import url_parse
 from werkzeug.utils import secure_filename
 from shutil import copyfile
-from app.forms import LoginForm
+from app.forms import LoginForm, PermissionsForm
 from app.models import users_tbl, DbUser
 
 @login.user_loader
@@ -31,7 +31,7 @@ def home():
     Home page, content can be added currently just a template for navigation bar at the top of the screen and footer
     """
 
-    return render_template('system_overview.html', page='home')
+    return render_template('Admin - SystemOverview', page='home')
 
 @app.route('/brief')
 @login_required
@@ -40,7 +40,7 @@ def brief():
     Home page, content can be added currently just a template for navigation bar at the top of the screen and footer
     """
 
-    return render_template('Admin - BreifPage.html', page='asset_management')
+    return render_template('Service Desk - Breifing', page='brief')
 
 
 @app.route('/permissions')
@@ -49,8 +49,8 @@ def permissions():
     """
     Home page, content can be added currently just a template for navigation bar at the top of the screen and footer
     """
-
-    return render_template('Admin - Permission Management.html', page='asset_management')
+    form =PermissionsForm()
+    return render_template('Admin - Permission Management', page='Permissions', form=form)
 
 @app.route('/SystemOverview')
 @login_required
@@ -59,7 +59,7 @@ def SystemOverview():
     Home page, content can be added currently just a template for navigation bar at the top of the screen and footer
     """
 
-    return render_template('Admin - SystemOverview.html', page='asset_management')
+    return render_template('Admin - SystemOverview', page='System Overview')
 
 @app.route('/admin_report')
 @login_required
@@ -68,7 +68,7 @@ def admin_report():
     Home page, content can be added currently just a template for navigation bar at the top of the screen and footer
     """
 
-    return render_template('Admin report page.html', page='asset_management')
+    return render_template('Admin report page', page='admin report')
 
 
 @app.route('/reports')
@@ -78,7 +78,7 @@ def reports():
     Home page, content can be added currently just a template for navigation bar at the top of the screen and footer
     """
 
-    return render_template('Service Desk - Reports page.html', page='asset_management')
+    return render_template('Service Desk - Reports page', page='reports')
 
 
 @app.route('/task_management')
@@ -88,7 +88,7 @@ def task_management():
     Home page, content can be added currently just a template for navigation bar at the top of the screen and footer
     """
 
-    return render_template('Service Desk - Task management page', page='asset_management')
+    return render_template('Service Desk - Task management page', page='task management')
 
 @app.route('/asset_management')
 @login_required
@@ -97,7 +97,7 @@ def asset_management():
     Home page, content can be added currently just a template for navigation bar at the top of the screen and footer
     """
 
-    return render_template('Admin - Asset Management Page.html', page='asset_management')
+    return render_template('Admin - Asset Management Page', page='asset_management')
 
 
 @app.route('/login', methods=['GET', 'POST'])

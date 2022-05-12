@@ -3,96 +3,53 @@
     {% block content %}
 
     <div class="container">
-        <div class="nav-wrapper">
-            <div class="left-side">
-                <a>DWG</a>
-            </div>
-
-            <div class="center">
-                <div class="nav-link-wrapper">
-                    <a href="#">Application breifing</a>
-                    <a href="#">System overview</a>
-                    <a href="#">Permission management</a>
-                    <a href="#">Asset management</a>
-                    <a href="#">Reports </a>
-                </div>
-            </div>
-            
-            <div class="right-side">
-                <a>User-icon</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="content">
+    <div class="row justify-content-center" style="max-width:100%">
+    <div class="col-md-8 my-5">
         <form action="#" method="GET">
+        {{ form.hidden_tag() }}
             <div>
-                <label for="user">Search Asset</label>
-                <input type="text" id="Asset-search" style="width: 100px; height: 100px">
+                <div class="form-group row">
+                                    {{ form.asset.label(class_='col-sm-2 col-form-label') }}<br>
+                                <div class="col-sm-10">
+                                {{ form.asset(size=32, class_="form-control") }}<br>
+                                {% for error in form.asset.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                                {% endfor %}
+                            </div>
+                            </div>
 
+
+                <div class="form-group row">
+                                    {{ form.username.label(class_='col-sm-2 col-form-label') }}<br>
+                                <div class="col-sm-10">
+                                {{ form.username(size=32, class_="form-control") }}<br>
+                                {% for error in form.username.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                                {% endfor %}
+                            </div>
+                            </div>
                 <button type="submit" id="Add-permission">Add</button>
                 <button type="submit" id="Remove-permission">Remove</button>
 
+
+                <div class="form-group row">
+                                    {{ form.username.label(class_='col-sm-2 col-form-label') }}<br>
+                                <div class="col-sm-10">
+                                {{ form.username(size=32, class_="form-control") }}<br>
+                                {% for error in form.username.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                                {% endfor %}
+                            </div>
+                            </div>
                 <label for="user">Asset maintaince window</label>
                 <input type="text" id="Asset-maintaince-window" style="width: 200px; height: 150px">
 
                 <a> Asset information </a>
-                <br><br>
-
-                <label for="user">Inventory Alphanumeric number</label>
-                <input type="text" id="Inventory-number" style="width: 200px; height: 125px">
-
-                <label for="user">Type</label>
-                <input type="text" id="Type" style="width: 200px; height: 125px">
-              
-                <label for="user">Presence Type</label>
-                <input type="text" id="Presence-type" style="width: 200px; height: 125px">
-
-                <label for="user">Order by date</label>
-                <input type="text" id="order-by-date" style="width: 200px; height: 125px">
-
-                <!-- Row 2 -->
-                <label for="user">Location</label>
-                <input type="text" id="Location" style="width: 200px; height: 125px">
-
-                <label for="user">Location code</label>
-                <input type="text" id="Location-code" style="width: 200px; height: 125px">
-
-                <label for="user">Location Type</label>
-                <input type="text" id="Location-type" style="width: 200px; height: 125px">
-
-                <label for="user">Resolver Queue</label>
-                <input type="text" id="Resolver-Queue" style="width: 200px; height: 125px">
-
-                <!-- Row 3 -->
-                <label for="user">Status</label>
-                <input type="text" id="status" style="width: 200px; height: 125px">
-
-                <label for="user">Sub Status</label>
-                <input type="text" id="Sub-Status" style="width: 200px; height: 125px">
-
-                <label for="user">Assigned to</label>
-                <input type="text" id="Assigned-to" style="width: 200px; height: 125px">
-
-                <label for="user">Built for</label>
-                <input type="text" id="Build-for" style="width: 200px; height: 125px">
-
-                <!-- Row 4 -->
-                <label for="user">Date created</label>
-                <input type="text" id="Date-created" style="width: 200px; height: 125px">
-
-                <label for="user">Date active</label>
-                <input type="text" id="Date-active" style="width: 200px; height: 125px">
-
-                <label for="user">Date installed</label>
-                <input type="text" id="Date installed" style="width: 200px; height: 125px">
-
-                <label for="user">Date Decommisioned</label>
-                <input type="text" id="Date-Decommisioned" style="width: 200px; height: 125px">
-              
                 
             </div>
         </form>
+    </div>
+    </div>
     </div>
 
 

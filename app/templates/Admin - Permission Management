@@ -3,39 +3,31 @@
     {% block content %}
 
     <div class="container">
-        <div class="nav-wrapper">
-            <div class="left-side">
-                <a>DWG</a>
-            </div>
-
-            <div class="center">
-                <div class="nav-link-wrapper">
-                    <a href="#">Application breifing</a>
-                    <a href="#">System overview</a>
-                    <a href="#">Permission management</a>
-                    <a href="#">Asset management</a>
-                    <a href="#">Reports </a>
+     <div class="row justify-content-center" style="max-width:100%">
+            <div class="col-md-8 my-5">
+        <form action="" method="POST">
+        {{ form.hidden_tag() }}
+            <div>
+            <div class="form-group row">
+                 {{ form.users.label(class_='col-sm-2 col-form-label') }}<br>
+                <div class="col-sm-10">
+                    {{ form.users(size=5, class_="form-control") }}<br>
+                    {% for error in form.users.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
                 </div>
             </div>
-            
-            <div class="right-side">
-                <a>User-icon</a>
+
+            <div class="form-group row">
+                {{ form.permissions.label(class_='col-sm-2 col-form-label') }}<br>
+                <div class="col-sm-10">
+                    {{ form.permissions(size=5, class_="form-control") }}<br>
+                    {% for error in form.permissions.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="content">
-        <form action="#" method="GET">
-            <div>
-                <label for="user">Users</label>
-                <input type="text" id="User-list" style="width: 300px; height: 500px">
-              
-                <a href="">↣↣</a>
-                <a href="">↣↣</a>
-
-                <label for="user">Permission overview</label>
-                <input type="text" id="Permission-overview" style="width: 300px; height: 500px">
-              
                 <button type="Add-permission">Add</button>
                 <button type="Remove-permission">Remove</button>
 
@@ -45,6 +37,8 @@
                 
             </div>
         </form>
+    </div>
+    </div>
     </div>
 
 

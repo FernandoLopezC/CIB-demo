@@ -3,34 +3,193 @@
     {% block content %}
 
     <div class="container">
-        <div class="nav-wrapper">
-            <div class="left-side">
-                <a>DWG</a>
-            </div>
-
-            <div class="center">
-                <div class="nav-link-wrapper">
-                    <a href="#">Application breifing</a>
-                    <a href="#">System overview</a>
-                    <a href="#">Permission management</a>
-                    <a href="#">Asset management</a>
-                    <a href="#">Reports </a>
-                </div>
-            </div>
-            
-            <div class="right-side">
-                <a>User-icon</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="content">
+     <div class="row justify-content-center" style="max-width:100%">
+            <div class="col-md-8 my-5">
         <form action="#" method="GET">
             <div>
-                <label for="Application-function-breif">Application function breif</label>
+                <label for="Application-function-breif">Application function brief</label>
                 <input type="text" type="function-breif" id="App-func-breif" style="width: 500px; height: 500px">
+                <p>
+                User Guide for Managers of the company:
+
+When greeted at the company page the user is required to log in using their designated username and password.
+
+
+
+Managers of the company will be then redirected to the admin index page and will have access to the admin system overview page, permission management page, asset management page and the admin reports page
+
+Admin Index Page:
+
+The admin index page allows for the user to have a briefing about the application and the functionality of the application. Admins are also allowed to have more overview to the application due to their oversight of all operations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+System Overview Page:
+
+The system overview page allows for the user to have an overview of a system such as reports generated, future directions, placement overview, asset overview, task overview and permission overview in their designated boxes.
+
+
+
+Permission Management Page:
+
+The permission management page for the admin to click on users from a list to show overview of permissions allowed to a user and enables them to add or remove permissions from that user using a fairly simple interface that is very simple to operate.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Asset Management Page:
+
+The asset management page allows for the admin to manage assets by using a search engine to look for the required assets which will then output the according information. The user can then update the information within a field if needed . A recall button has also been implemented to allow for the admin to be able to recall the asset. In addition to this an “asset maintenance window” feature is included which informs the user the optimal time to take the asset offline.
+
+
+
+Admins Report Page:
+
+The admins report page allows for the admin to generate a specific  type of report chosen from a drop down menu. The report summarises the information of an asset from a certain period of time using a start and end date.
+
+
+
+Page Break
+
+
+User Guide for Technicians of the company
+
+When greeted at the company page the user is required to log in using their designated username and password.
+
+
+
+Technicians of the company will be then redirected to the technician index page and will have access to the asset management page, report page,
+
+Technician Index Page:
+
+The technician index page allows for the user to have a briefing about the application and the functionality of the application
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Asset Management Page:
+
+The asset management page allows for the technician role to be able to view the assets within an asset list. The page also allows for the user to select or search for an asset upon finding the asset, the asset’s: location, status, type of data to record or date which will allow for the data to be recorded and will be recorded into the asset records
+
+
+
+Report Page:
+
+The report page allows for the technician to generate a specific type of report chosen from a drop-down menu. The report summarises the information of an asset from a certain period of time using a start and end date.
+
+
+
+Page Break
+
+
+User Guide for Service Desk of the company
+
+When greeted at the company page the user is required to log in using their designated username and password.
+
+
+
+Employees that work at the service desk of the company will be able to view the index page, task management page, assets page, new assets page and reports page.
+
+Service Desk Index Page:
+
+The service desk index page allows for the user to have a briefing about the application and the functionality of the application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Task Management Page:
+
+The task management page will allow the service desk to select a user and assign them to a current or new task. This feature also allows for the user to have their assigned tasks taken from them. The page also includes a feature where more details of the task is given such as the title, the description, assigned tasks and the task status.
+
+
+
+Assets Management Page:
+
+The assets management page allows for the user technician role to be able to view the assets within an asset list. The page also allows for the user to select or search for an asset using a search engine which allow for them to find asset location, status, type of data or date that it was last active which will allow for the data to be recorded and will be recorded into the asset reports
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+New Assets Page:
+
+The new assets page allows for the user to view the new assets that have been created over the last two months and will allow for them to search new assets and assign data and register it to the main database.
+
+
+
+Reports Page:
+
+The report page allows for the user to generate a specific type of report chosen from a drop down menu. The report summarises the information of an asset from a certain period of time using a start and end date.
+
+
+                </p>
             </div>
         </form>
+    </div>
+    </div>
     </div>
 
 

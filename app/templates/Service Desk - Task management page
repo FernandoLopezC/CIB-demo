@@ -3,28 +3,8 @@
     {% block content %}
 
     <div class="container">
-        <div class="nav-wrapper">
-            <div class="left-side">
-                <a>DWG</a>
-            </div>
-
-            <div class="center">
-                <div class="nav-link-wrapper">
-                    <a href="#">Application breifing</a>
-                    <a href="#">Task management</a>
-                    <a href="#">Assets</a>
-                    <a href="#">New assets</a>
-                    <a href="#">Reports </a>
-                </div>
-            </div>
-            
-            <div class="right-side">
-                <a>User-icon</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="content">
+     <div class="row justify-content-center" style="max-width:100%">
+            <div class="col-md-8 my-5">
         <form action="#" method="GET">
             <div>
                 <a> Task Assignment </a>
@@ -50,6 +30,8 @@
                 
             </div>
         </form>
+    </div>
+    </div>
     </div>
 
 
